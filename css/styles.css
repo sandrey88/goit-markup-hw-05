@@ -531,13 +531,13 @@ img {
     align-items: center;
     justify-content: center;
     flex-direction: row;
-    gap: 16px;
     min-width: 165px;
     padding: 8px 24px;
     text-align: center;
 }
 
 .subscribe-icon {
+    margin-left: 16px;
     fill: var(--white);
 }
 
@@ -551,11 +551,11 @@ img {
     width: 100%;
     height: 100%;
     background-color: var(--navy-blue-modal);
-    transition: var(--animation);
-    transition-property: opacity visibility;
     opacity: 0;
     pointer-events: none;
     visibility: hidden;
+    transition: var(--animation);
+    transition-property: opacity, visibility;
 }
 
 .backdrop.is-open {
@@ -569,7 +569,7 @@ img {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    max-width: 408px;
+    width: 408px;
     min-height: 584px;
     padding: 72px 24px 24px 24px;
     border-radius: 4px;
@@ -577,6 +577,7 @@ img {
     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14),
     0 1px 3px 0 rgba(0, 0, 0, 0.12),
     0 2px 1px 0 rgba(0, 0, 0, 0.2);
+    transition: transform var(--animation);
 }
 
 .modal-close-btn {
@@ -589,23 +590,28 @@ img {
     padding: 0;
     width: 24px;
     height: 24px;
-    border-radius: 100%;
+    border-radius: 50%;
     background-color: var(--cornflower);
     border: 1px solid rgba(0, 0, 0, 0.1);
-    fill: var(--navy-blue);
     cursor: pointer;
     transition: var(--animation);
-    transition-property: background-color, border-color, fill;
+    transition-property: background-color, border;
 }
-
-/* .modal-close-icon {
-    fill: var(--navy-blue);
-} */
 
 .modal-close-btn:hover,
 .modal-close-btn:focus {
     background-color: var(--ocean);
-    border-color: var(--ocean);
+    border: none;
+}
+
+.modal-close-icon {
+    fill: var(--navy-blue);
+    transition: var(--animation);
+    transition-property: fill;
+}
+
+.modal-close-btn:hover .modal-close-icon,
+.modal-close-btn:focus .modal-close-icon {
     fill: var(--white);
 }
 
@@ -626,6 +632,10 @@ img {
 
 .modal-form-field {
     margin-bottom: 8px;
+}
+
+.other-margin {
+    margin-bottom: 16px;
 }
 
 .modal-form-label {
@@ -686,6 +696,7 @@ img {
     letter-spacing: 0.04em;
     outline: transparent;
     resize: none;
+    color: var(--grey);
     background-color: inherit;
     transition: var(--animation);
     transition-property: border-color;
@@ -699,7 +710,7 @@ img {
     color: var(--navy-blue-modal);
 }
 
-.modal-form-agreement {
+.modal-form-privacy {
     margin-bottom: 24px;
 }
 
@@ -721,20 +732,15 @@ img {
     border-radius: 2px;
     border: 1px solid var(--navy-blue-modal);
     background-color: inherit;
+    fill: transparent;
     transition: var(--animation);
-    transition-property: background-color, border-color;
+    transition-property: background-color, border, fill;
 }
 
-.modal-form-checkbox-icon {
-    fill: none;
-}
 
 input[type="checkbox"]:checked + .modal-form-description > .modal-form-checkbox {
-    background-color: var(--iris);
-    border-color: var(--iris);
-}
-
-input[type="checkbox"]:checked + .modal-form-description .modal-form-checkbox-icon {
+    background-color: var(--ocean);
+    border: none;
     fill: var(--cloud);
 }
 
