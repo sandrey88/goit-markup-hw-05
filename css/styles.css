@@ -696,7 +696,7 @@ img {
     letter-spacing: 0.04em;
     outline: transparent;
     resize: none;
-    color: var(--grey);
+    color: var(--navy-blue-modal);
     background-color: inherit;
     transition: var(--animation);
     transition-property: border-color;
