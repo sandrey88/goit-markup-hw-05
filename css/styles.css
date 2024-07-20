@@ -297,7 +297,7 @@ img {
     margin: 0 auto;
 }
 
-.btn-order {
+.btn {
     min-width: 169px;
     border-radius: 4px;
     padding: 16px 32px;
@@ -316,8 +316,8 @@ img {
     transition-property: background-color;
 }
 
-.btn-order:hover,
-.btn-order:focus {
+.btn:hover,
+.btn:focus {
     background-color: var(--ocean);
 }
 /* #endregion */
@@ -468,7 +468,7 @@ img {
     color: var(--cloud);
 }
 
-.social-media {
+.footer-heading {
     width: 208px;
     font-weight: 500;
     line-height: 1.5;
@@ -476,6 +476,10 @@ img {
     color: var(--white);
     margin-bottom: 16px;
     margin-right: 0;
+}
+
+.footer-social-media {
+    margin-right: 80px;
 }
 
 .footer-socials {
@@ -495,6 +499,48 @@ img {
 .footer-social-link .social-link:focus {
     background-color: var(--green);
 }
+
+.subscribe-form {
+    display: flex;
+    gap: 24px;
+}
+
+.subscribe-input {
+    display: block;
+    width: 264px;
+    height: 40px;
+    padding: 8px 16px;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 2;
+    letter-spacing: 0.04em;
+    border-radius: 4px;
+    border: 1px solid var(--white);
+    color: var(--white);
+    outline: transparent;
+    background-color: inherit;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
+}
+
+.subscribe-input::placeholder {
+    color: var(--white);
+}
+
+.subscribe-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 16px;
+    min-width: 165px;
+    padding: 8px 24px;
+    text-align: center;
+}
+
+.subscribe-icon {
+    fill: var(--white);
+}
+
 /* #endregion */
 
 /* #region Modal window */
@@ -505,6 +551,17 @@ img {
     width: 100%;
     height: 100%;
     background-color: var(--navy-blue-modal);
+    transition: var(--animation);
+    transition-property: opacity visibility;
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+}
+
+.backdrop.is-open {
+        opacity: 1;
+        pointer-events: initial;
+        visibility: visible;
 }
 
 .modal {
@@ -563,6 +620,8 @@ img {
 }
 
 .modal-form {
+    display: flex;
+    flex-direction: column;
 }
 
 .modal-form-field {
@@ -586,12 +645,11 @@ img {
 .modal-form-input {
     display: block;
     width: 100%;
+    height: 40px;
     padding: 8px 38px;
     border-radius: 4px;
     border: 1px solid var(--navy-blue-modal);
     outline: transparent;
-    width: 100%;
-    height: 40px;
     background-color: inherit;
     transition: var(--animation);
     transition-property: border-color;
@@ -686,11 +744,16 @@ input[type="checkbox"]:checked + .modal-form-description .modal-form-checkbox-ic
     text-decoration-skip-ink: none;
     color: var(--iris);
     transition: var(--animation);
-    transition-property: text-decoration;
+    transition-property: color, text-decoration;
 }
 
 .modal-form-link:hover,
 .modal-form-link:focus {
+    color: var(--ocean);
     text-decoration: none;
+}
+
+.modal-btn {
+    margin: 0 auto;
 }
 /* #endregion */
